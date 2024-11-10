@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="./src/output.css" rel="stylesheet" />
+    <link rel="icon" href="favicon.png" type="image/png" sizes="32x32" />
+    <title>Guía Tailwind CSS</title>
+  </head>
+  <body class="bg-gray-200 font-sans text-gray-800">
+    <div class="mx-auto max-w-4xl p-6">
+      <header class="mb-8 text-center">
+        <h1 class="text-4xl font-bold text-blue-600">
+          Guía de Instalación de Tailwind CSS
+        </h1>
+        <p class="mt-4 text-lg text-gray-600">
+          Sigue estos pasos para instalar Tailwind CSS en tu nuevo proyecto.
+        </p>
+      </header>
+
+      <!-- Paso 1: Crear un Proyecto -->
+      <section class="mb-8">
+        <h2 class="mb-4 text-2xl font-semibold text-blue-500">
+          Paso 1: Crear un Nuevo Proyecto
+        </h2>
+        <p class="mb-4 text-gray-700">
+          Si aún no tienes un proyecto, crea uno nuevo utilizando tu gestor de
+          paquetes favorito, como
+          <code class="font-mono text-blue-500">npm</code> o
+          <code class="font-mono text-blue-500">bun</code>.
+        </p>
+        <pre
+          class="rounded-md bg-gray-800 p-4 text-white"
+        ><code>mkdir mi-proyecto
+cd mi-proyecto
+</code></pre>
+      </section>
+
+      <!-- Paso 2: Instalar Tailwind CSS -->
+      <section class="mb-8">
+        <h2 class="mb-4 text-2xl font-semibold text-blue-500">
+          Paso 2: Instalar Tailwind CSS
+        </h2>
+        <p class="mb-4 text-gray-700">
+          Instala Tailwind CSS como una dependencia de desarrollo utilizando
+          <code class="font-mono text-blue-500">npm</code>.
+        </p>
+        <pre
+          class="rounded-md bg-gray-800 p-4 text-white"
+        ><code>npm install -D tailwindcss</code></pre>
+        <p class="mt-4 text-gray-700">
+          A continuación, ejecuta el siguiente comando para generar el archivo
+          de configuración de Tailwind:
+        </p>
+        <pre
+          class="rounded-md bg-gray-800 p-4 text-white"
+        ><code>npx tailwindcss init</code></pre>
+      </section>
+
+      <!-- Paso 3: Configurar Tailwind -->
+      <section class="mb-8">
+        <h2 class="mb-4 text-2xl font-semibold text-blue-500">
+          Paso 3: Configurar Tailwind
+        </h2>
+        <p class="mb-4 text-gray-700">
+          Abre el archivo
+          <code class="font-mono text-blue-500">tailwind.config.js</code> y
+          edita el contenido del array
+          <code class="font-mono text-blue-500">content</code> para asegurarte
+          de que Tailwind pueda escanear tus archivos HTML y CSS.
+        </p>
+        <pre
+          class="rounded-md bg-gray-800 p-4 text-white"
+        ><code>module.exports = {
+  content: [
+    "./index.html",
+    "./src/**/*.{html,js}"
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}</code></pre>
+      </section>
+
+      <!-- Paso 4: Crear el Archivo CSS -->
+      <section class="mb-8">
+        <h2 class="mb-4 text-2xl font-semibold text-blue-500">
+          Paso 4: Crear el Archivo CSS
+        </h2>
+        <p class="mb-4 text-gray-700">
+          Crea un archivo CSS, por ejemplo
+          <code class="font-mono text-blue-500">styles.css</code>, y agrega las
+          directivas de Tailwind para incluir los estilos básicos, componentes y
+          utilidades.
+        </p>
+        <pre class="rounded-md bg-gray-800 p-4 text-white"><code>@tailwind base;
+@tailwind components;
+@tailwind utilities;</code></pre>
+      </section>
+
+      <!-- Paso 5: Agregar el Archivo CSS -->
+      <section class="mb-8">
+        <h2 class="mb-4 text-2xl font-semibold text-blue-500">
+          Paso 5: Agregar el Archivo CSS a tu Proyecto
+        </h2>
+        <p class="mb-4 text-gray-700">
+          Agrega el archivo CSS a tu proyecto en el archivo
+          <code class="font-mono text-blue-500">index.html</code> dentro de la
+          etiqueta <code class="font-mono text-blue-500">&lt;head&gt;</code>.
+        </p>
+        <pre
+          class="rounded-md bg-gray-800 p-4 text-white"
+        ><code>&lt;link href="./output.css" rel="stylesheet"&gt;</code></pre>
+      </section>
+
+      <!-- Paso 6: Construir y Visualizar -->
+      <section class="mb-8">
+        <h2 class="mb-4 text-2xl font-semibold text-blue-500">
+          Paso 6: Construir y Visualizar
+        </h2>
+        <p class="mb-4 text-gray-700">
+          Usa el siguiente comando para iniciar el proceso de construcción y ver
+          tus cambios en tiempo real.
+        </p>
+        <pre
+          class="rounded-md bg-gray-800 p-4 text-white"
+        ><code>npx tailwindcss -i ./src/styles.css -o ./src/output.css --watch</code></pre>
+        <p class="my-4 text-gray-700">
+          Tambien puedes agregar un script en el package.json para correrlo con
+          npm run tail.
+        </p>
+        <pre class="rounded-md bg-gray-800 p-4 text-white"><code>"scripts": {
+  "tail": "npx tailwindcss -i ./src/styles.css -o ./src/output.css --watch"
+ }</code></pre>
+
+        <p class="mt-4 text-gray-700">
+          Ahora, abre tu
+          <code class="font-mono text-blue-500">index.html</code> en el
+          navegador para ver los resultados.
+        </p>
+      </section>
+
+      <!-- Paso 7: Instalar Prettier y el Plugin de Tailwind CSS -->
+      <section class="mb-8">
+        <h2 class="mb-4 text-2xl font-semibold text-blue-500">
+          Paso 7: Instalar Prettier y el Plugin de Tailwind CSS
+        </h2>
+        <p class="mb-4 text-gray-700">
+          Para asegurarte de que tu código CSS esté bien formateado y ordenado,
+          puedes integrar Prettier con el plugin de Tailwind CSS.
+        </p>
+        <p class="mb-4 text-gray-700">
+          Primero, instala Prettier y el plugin de Tailwind CSS como
+          dependencias de desarrollo:
+        </p>
+        <pre
+          class="rounded-md bg-gray-800 p-4 text-white"
+        ><code>npm install -D prettier prettier-plugin-tailwindcss</code></pre>
+
+        <p class="my-4 text-gray-700">
+          Luego, crea un archivo de configuración de Prettier en la raíz de tu
+          proyecto llamado
+          <code class="font-mono text-blue-500">.prettierrc</code> o edita el
+          existente, agregando lo siguiente:
+        </p>
+        <pre class="rounded-md bg-gray-800 p-4 text-white"><code>{
+  "plugins": ["prettier-plugin-tailwindcss"]
+}</code></pre>
+
+        <p class="my-4 text-gray-700">
+          Ahora Prettier ordenará las clases de Tailwind CSS automáticamente
+          cuando formatees tus archivos. Puedes ejecutarlo manualmente con:
+        </p>
+        <pre
+          class="rounded-md bg-gray-800 p-4 text-white"
+        ><code>npx prettier --write .</code></pre>
+      </section>
+
+      <!-- Ejemplo de uso Tailwind CSS -->
+      <section
+        class="mx-auto flex max-w-sm items-center gap-x-4 rounded-xl bg-white p-6 shadow-lg"
+      >
+        <div class="shrink-0">
+          <img class="size-12" src="/img/logo.svg" alt="ChitChat Logo" />
+        </div>
+        <div>
+          <div class="text-xl font-medium text-black">ChitChat</div>
+          <p class="text-slate-500">You have a new message!</p>
+        </div>
+      </section>
+      <!-- Pie de página -->
+      <footer class="mt-12 text-center text-gray-600">
+        <p>&copy; 2024 - Guía de Instalación de Tailwind CSS</p>
+      </footer>
+    </div>
+  </body>
+</html>
